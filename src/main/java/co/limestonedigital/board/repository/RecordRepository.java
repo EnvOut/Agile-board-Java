@@ -7,5 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface RecordRepository extends MongoRepository<RecordModel, UUID> {
+public interface RecordRepository extends MongoRepository<RecordModel, String> {
+//    void removeById(String id);
+
+    RecordModel getById(String id);
 }

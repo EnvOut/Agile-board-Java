@@ -18,8 +18,8 @@ import java.util.List;
 public class WebConfiguration implements WebMvcConfigurer{
     @Override
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(new MappingJackson2HttpMessageConverter());
         converters.add(new StringHttpMessageConverter());
+        converters.add(new MappingJackson2HttpMessageConverter());
     }
 
     @Override
@@ -53,11 +53,6 @@ public class WebConfiguration implements WebMvcConfigurer{
 //        bean.setSuffix(".jsp");
 //        return bean;
 //    }
-
-    @Bean(name = "multipartResolver")
-    public CommonsMultipartResolver getMultipartResolver() {
-        return new CommonsMultipartResolver();
-    }
 
     @Bean(name = "messageSource")
     public ReloadableResourceBundleMessageSource getMessageSource() {
