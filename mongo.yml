@@ -3,10 +3,6 @@ services:
   mongo:
     image: "mongo"
     ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_PASSWORD: postgres
-  pgadmin:
-    image: "dpage/pgadmin4"
-    ports:
       - "27017:27017"
+      - "27018:27018"
+      - "27019:27019"
